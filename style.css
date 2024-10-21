@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.piano-key {
+  @apply w-10 h-36 border border-black inline-block mx-0.5 bg-white cursor-pointer relative;
+}
+
+.piano-key.black {
+  @apply bg-gray-800 h-24 w-7 -mx-3.5 z-10;
+}
+
+.piano-key.active {
+  @apply bg-orange-400;
+}
+
+.key-label {
+  @apply absolute bottom-1 left-1/2 transform -translate-x-1/2 text-xs font-bold;
+}
+
+.piano-key.black .key-label {
+  @apply text-white bottom-auto top-1;
+}
+
+@media (max-width: 600px) {
+  .piano-key {
+    @apply w-8 h-28;
+  }
+
+  .piano-key.black {
+    @apply w-5 h-20 -mx-2.5;
+  }
+
+  .key-label {
+    @apply text-[10px];
+  }
+}
